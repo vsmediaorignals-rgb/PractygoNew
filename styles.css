@@ -341,32 +341,93 @@ body.dark{
   --white:#0f172a;
   --off-white:#1e293b;
   --gray-light:#334155;
-  --gray-mid:#64748b;
+  --gray-mid:#94a3b8;
   --text-dark:#f1f5f9;
   --text-body:#cbd5e1;
   --black:#020617;
-  --blue-light:#1e3a5f;
+  --blue-light:#1e3558;
   --shadow-sm:0 2px 8px rgba(0,0,0,.3);
   --shadow-md:0 8px 32px rgba(0,0,0,.4);
   --shadow-lg:0 24px 64px rgba(0,0,0,.5);
 }
+/* Nav */
 body.dark .nav.scrolled{background:rgba(15,23,42,.97)}
+body.dark .nav-static{background:rgba(15,23,42,.97)!important}
+body.dark .nav-static .logo,body.dark .nav.scrolled .logo{color:#e2e8f0!important}
+body.dark .nav-static .nav-links a,body.dark .nav.scrolled .nav-links a{color:#cbd5e1!important}
+body.dark .nav-static .nav-links a:hover,body.dark .nav.scrolled .nav-links a:hover,
+body.dark .nav-static .nav-links a.active,body.dark .nav.scrolled .nav-links a.active{color:#60a5fa!important}
+body.dark .nav-static .hamburger span,body.dark .nav.scrolled .hamburger span{background:#e2e8f0!important}
+body.dark .nav-static .theme-toggle,body.dark .nav.scrolled .theme-toggle{color:#e2e8f0!important}
+/* Hero cards */
 body.dark .hcard{background:rgba(255,255,255,.06)}
 body.dark .about-mini-card{background:rgba(255,255,255,.08)}
-body.dark .service-card{background:var(--off-white);border-color:var(--gray-light)}
-body.dark .plan-card:not(.featured){background:var(--off-white);border-color:var(--gray-light)}
-body.dark .contact-card{background:var(--off-white)}
-body.dark .contact-form-wrap{background:var(--off-white);border-color:var(--gray-light)}
-body.dark .form-group input,body.dark .form-group select,body.dark .form-group textarea{background:var(--white);border-color:var(--gray-light);color:var(--text-dark)}
-body.dark .faq-item{background:var(--off-white)}
-body.dark .section-title{color:#e2e8f0}
-body.dark .svc-content h2,body.dark .contact-info h2,body.dark .contact-form-wrap h3{color:#e2e8f0}
-body.dark .service-card h3,body.dark .process-step h3,body.dark .plan-name,body.dark .about-feature-text strong,body.dark .why-reason-text strong{color:#e2e8f0}
-body.dark .about-badge{background:var(--off-white)}
-body.dark .about-badge-text strong{color:#e2e8f0}
-body.dark .plan-price sub{color:var(--gray-mid)}
+/* Trusted */
 body.dark .trusted{background:var(--off-white)}
+body.dark .trusted-label{color:#94a3b8}
+body.dark .trusted-logo{color:#94a3b8}
+/* About */
+body.dark .about-badge{background:#1e293b;border:1px solid #334155}
+body.dark .about-badge-text strong{color:#e2e8f0}
+body.dark .about-badge-text span{color:#94a3b8}
+body.dark .about-feature-icon{background:#1e3558}
+body.dark .about-feature-text strong{color:#e2e8f0}
+body.dark .about-feature-text span{color:#cbd5e1}
+/* Section titles & labels */
+body.dark .section-title{color:#e2e8f0}
+body.dark .section-sub{color:#cbd5e1}
+body.dark .section-label{background:#1e3558;color:#93c5fd}
+/* Service cards */
+body.dark .service-card{background:#1e293b;border-color:#334155}
+body.dark .service-card h3{color:#e2e8f0}
+body.dark .service-card p{color:#cbd5e1}
+body.dark .service-icon{background:#1e3558}
+body.dark .service-tag{background:#1e3558;color:#93c5fd}
+/* Process */
+body.dark .process-section{background:#0f172a}
+body.dark .process-step h3{color:#e2e8f0}
+body.dark .process-step p{color:#cbd5e1}
+body.dark .step-number{border-color:#0f172a;box-shadow:0 0 0 4px #1e3558}
+/* Services detail page */
+body.dark .svc-content h2{color:#e2e8f0}
+body.dark .svc-content p{color:#cbd5e1}
+body.dark .svc-bullet{color:#e2e8f0}
+body.dark .svc-bullet::before{background:#1e3558;color:#93c5fd}
+/* Plans */
+body.dark .plan-card:not(.featured){background:#1e293b;border-color:#334155}
+body.dark .plan-name{color:#e2e8f0}
+body.dark .plan-desc{color:#94a3b8}
+body.dark .plan-divider{background:#334155}
+body.dark .plan-feature{color:#cbd5e1}
+body.dark .plan-feature-check{background:#1e3558;color:#93c5fd}
+body.dark .plan-price sub{color:#64748b}
+/* FAQ */
+body.dark .faq-item{background:#1e293b;border-color:#334155}
+body.dark .faq-item.open{border-color:#3b82f6}
+body.dark .faq-question{color:#e2e8f0}
+body.dark .faq-arrow{background:#1e3558;color:#93c5fd}
+body.dark .faq-answer-inner{color:#cbd5e1}
+/* Contact */
+body.dark .contact-info h2{color:#e2e8f0}
+body.dark .contact-info p{color:#cbd5e1}
+body.dark .contact-card{background:#1e293b;border-color:#334155}
+body.dark .contact-card strong{color:#e2e8f0}
+body.dark .contact-card span{color:#cbd5e1}
+body.dark .contact-card-icon{background:#1e3558}
+body.dark .contact-social h4{color:#e2e8f0}
+body.dark .social-link{background:#1e3558;color:#93c5fd}
+body.dark .contact-form-wrap{background:#1e293b;border-color:#334155}
+body.dark .contact-form-wrap h3{color:#e2e8f0}
+body.dark .contact-form-wrap>p{color:#cbd5e1}
+body.dark .form-group label{color:#93c5fd}
+body.dark .form-group input,body.dark .form-group select,body.dark .form-group textarea{background:#0f172a;border-color:#334155;color:#f1f5f9}
+body.dark .form-group input::placeholder,body.dark .form-group textarea::placeholder{color:#64748b}
+body.dark .form-success h4{color:#e2e8f0}
+body.dark .form-success p{color:#cbd5e1}
+/* Footer */
 body.dark footer{background:#020617}
+body.dark .footer-col h4{color:#e2e8f0}
+/* Why section stays dark by design — no changes needed */
 
 /* ── Responsive ── */
 @media(max-width:1024px){
