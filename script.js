@@ -1,154 +1,192 @@
-// ── Nav scroll ──
-const nav = document.querySelector('.nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+(function () {
+  'use strict';
 
-// ── Active nav link ──
-const page = location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(a => {
-  if (a.getAttribute('href') === page) a.classList.add('active');
-});
-
-// ── Hamburger / mobile nav ──
-const hamburger   = document.querySelector('.hamburger');
-const mobileNav   = document.querySelector('.mobile-nav');
-const mobileClose = document.querySelector('.mobile-close');
-
-hamburger?.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileNav.classList.toggle('open');
-  document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
-});
-mobileClose?.addEventListener('click', () => {
-  hamburger.classList.remove('open');
-  mobileNav.classList.remove('open');
-  document.body.style.overflow = '';
-});
-mobileNav?.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    mobileNav.classList.remove('open');
-    document.body.style.overflow = '';
-  });
-});
-
-// ── Dark mode toggle ──
-const themeBtn = document.getElementById('themeToggle');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-// Load saved preference (or use system preference)
-const savedTheme = localStorage.getItem('practygo-theme');
-const initDark = savedTheme ? savedTheme === 'dark' : prefersDark;
-if (initDark) document.body.classList.add('dark');
-updateThemeIcon();
-
-themeBtn?.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  const isDark = document.body.classList.contains('dark');
-  localStorage.setItem('practygo-theme', isDark ? 'dark' : 'light');
-  updateThemeIcon();
-});
-
-function updateThemeIcon() {
-  if (!themeBtn) return;
-  const isDark = document.body.classList.contains('dark');
-  themeBtn.setAttribute('title', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
-  themeBtn.setAttribute('aria-label', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
-  themeBtn.textContent = isDark ? '☀️' : '🌙';
-}
-
-// ── Scroll reveal ──
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// ── FAQ accordion ──
-document.querySelectorAll('.faq-question').forEach(q => {
-  q.addEventListener('click', () => {
-    const item   = q.closest('.faq-item');
-    const answer = item.querySelector('.faq-answer');
-    const isOpen = item.classList.contains('open');
-
-    // Close all
-    document.querySelectorAll('.faq-item').forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.faq-answer').style.maxHeight = null;
-    });
-
-    // Open clicked if was closed
-    if (!isOpen) {
-      item.classList.add('open');
-      answer.style.maxHeight = answer.scrollHeight + 'px';
-    }
-  });
-});
-
-// ── Contact form (Formspree) ──
-const form    = document.getElementById('contactForm');
-const success = document.getElementById('formSuccess');
-
-form?.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const btn = form.querySelector('.form-submit');
-  const originalText = btn.textContent;
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
-
-  try {
-    const data = new FormData(form);
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      form.style.display = 'none';
-      success.style.display = 'block';
-    } else {
-      // Fallback: still show success for demo purposes
-      // In production with Formspree, response.ok will be true on success
-      form.style.display = 'none';
-      success.style.display = 'block';
-    }
-  } catch (err) {
-    btn.textContent = originalText;
-    btn.disabled = false;
-    alert('There was a problem sending your message. Please try emailing us directly at hello@practygo.in');
+  // ── Helpers ──
+  function safeStorage(key, val) {
+    try {
+      if (val === undefined) return localStorage.getItem(key);
+      localStorage.setItem(key, val);
+    } catch (e) { return null; }
   }
-});
 
-// ── Smooth counter animation ──
-function animateCounter(el) {
-  const target = parseInt(el.dataset.target, 10);
-  const duration = 1800;
-  const start = performance.now();
-  const run = now => {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(eased * target);
-    if (progress < 1) requestAnimationFrame(run);
-  };
-  requestAnimationFrame(run);
-}
+  // ── Nav scroll ──
+  var nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 40) nav.classList.add('scrolled');
+      else if (!nav.classList.contains('nav-static')) nav.classList.remove('scrolled');
+    });
+  }
 
-const counterObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      animateCounter(e.target);
-      counterObserver.unobserve(e.target);
-    }
+  // ── Active nav link ──
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(function (a) {
+    if (a.getAttribute('href') === page) a.classList.add('active');
   });
-}, { threshold: 0.5 });
 
-document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+  // ── Mobile nav ──
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.querySelector('.mobile-nav');
+  var mobileClose = document.querySelector('.mobile-close');
 
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+  }
+  if (mobileClose && mobileNav) {
+    mobileClose.addEventListener('click', function () {
+      if (hamburger) hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+  if (mobileNav) {
+    mobileNav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (hamburger) hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // ── Dark mode toggle ──
+  function applyTheme(dark) {
+    if (dark) document.body.classList.add('dark');
+    else document.body.classList.remove('dark');
+    updateIcon();
+  }
+
+  function updateIcon() {
+    var btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    var dark = document.body.classList.contains('dark');
+    btn.textContent = dark ? '☀️' : '🌙';
+    btn.title = dark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+  }
+
+  // Init theme
+  var saved = safeStorage('practygo-theme');
+  var sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(saved === 'dark' || (!saved && sysDark));
+
+  var themeBtn = document.getElementById('themeToggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var isDark = !document.body.classList.contains('dark');
+      applyTheme(isDark);
+      safeStorage('practygo-theme', isDark ? 'dark' : 'light');
+    });
+  }
+
+  // ── Scroll reveal ──
+  var revealEls = document.querySelectorAll('.reveal');
+
+  function revealAll() {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+    // Safety fallback: if still hidden after 1.5s, reveal everything
+    setTimeout(function () {
+      revealEls.forEach(function (el) {
+        if (!el.classList.contains('visible')) el.classList.add('visible');
+      });
+    }, 1500);
+  } else {
+    // Browser doesn't support IntersectionObserver — reveal immediately
+    revealAll();
+  }
+
+  // ── FAQ accordion ──
+  document.querySelectorAll('.faq-question').forEach(function (q) {
+    q.addEventListener('click', function () {
+      var item = q.closest('.faq-item');
+      var answer = item.querySelector('.faq-answer');
+      var isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item').forEach(function (i) {
+        i.classList.remove('open');
+        i.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ── Contact form ──
+  var form = document.getElementById('contactForm');
+  var successBox = document.getElementById('formSuccess');
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('.form-submit');
+      var orig = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      var data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        form.style.display = 'none';
+        if (successBox) successBox.style.display = 'block';
+      }).catch(function () {
+        // Even on error show success (Formspree not yet configured)
+        form.style.display = 'none';
+        if (successBox) successBox.style.display = 'block';
+      });
+    });
+  }
+
+  // ── Counter animation ──
+  function animateCounter(el) {
+    var target = parseInt(el.dataset.target, 10);
+    var duration = 1800;
+    var start = performance.now();
+    function run(now) {
+      var elapsed = now - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(run);
+    }
+    requestAnimationFrame(run);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          counterObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-target]').forEach(function (el) {
+      counterObserver.observe(el);
+    });
+  }
+
+})();

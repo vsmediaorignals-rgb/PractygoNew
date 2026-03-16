@@ -319,6 +319,17 @@ footer{background:var(--black);color:rgba(255,255,255,.6);padding:4rem 0 2rem}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+/* ── nav-static (interior pages: always show scrolled style) ── */
+.nav-static{background:rgba(255,255,255,.97)!important;box-shadow:var(--shadow-sm)!important;padding:.75rem 0!important}
+.nav-static .logo{color:var(--blue-deep)!important}
+.nav-static .nav-links a{color:var(--text-body)!important}
+.nav-static .nav-links a:hover,.nav-static .nav-links a.active{color:var(--blue-bright)!important}
+.nav-static .hamburger span{background:var(--blue-deep)!important}
+.nav-static .theme-toggle{color:var(--text-body)!important}
+body.dark .nav-static{background:rgba(15,23,42,.97)!important}
+body.dark .nav-static .logo{color:#e2e8f0!important}
+body.dark .nav-static .nav-links a{color:var(--text-body)!important}
+
 /* ── Dark mode toggle button ── */
 .theme-toggle{background:none;border:none;cursor:pointer;width:38px;height:38px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--transition);flex-shrink:0;color:rgba(255,255,255,.85)}
 .theme-toggle:hover{background:rgba(255,255,255,.15);transform:scale(1.1)}
