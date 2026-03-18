@@ -427,7 +427,55 @@ body.dark .form-success p{color:#cbd5e1}
 /* Footer */
 body.dark footer{background:#020617}
 body.dark .footer-col h4{color:#e2e8f0}
-/* Why section stays dark by design — no changes needed */
+
+/* ── Sections with inherently dark backgrounds: restore white text ──
+   These sections (hero, page-hero, why, cta-band) have dark BG in both
+   light AND dark mode. Dark mode turns --white into near-black, breaking
+   all text that was white-on-dark. We force it back to light here. ── */
+body.dark .hero h1,
+body.dark .page-hero h1{color:#f1f5f9 !important}
+body.dark .hero h1 em{color:#93c5fd !important}
+body.dark .hero-desc{color:rgba(241,245,249,.8) !important}
+body.dark .hero-label{color:#93c5fd !important;background:rgba(147,197,253,.15) !important}
+body.dark .stat-num{color:#f1f5f9 !important}
+body.dark .stat-label{color:rgba(241,245,249,.55) !important}
+body.dark .page-hero p{color:rgba(241,245,249,.8) !important}
+body.dark .page-hero .section-label{color:#93c5fd !important;background:rgba(147,197,253,.15) !important}
+body.dark .why-content .section-title{color:#f1f5f9 !important}
+body.dark .why-content .section-sub{color:rgba(241,245,249,.75) !important}
+body.dark .why-reason-text strong{color:#f1f5f9 !important}
+body.dark .why-reason-text span{color:rgba(241,245,249,.65) !important}
+body.dark .cta-band h2{color:#f1f5f9 !important}
+body.dark .cta-band p{color:rgba(241,245,249,.85) !important}
+body.dark .testimonial-quote{color:#f1f5f9 !important}
+body.dark .testimonial-name{color:#f1f5f9 !important}
+body.dark .testimonial-role{color:rgba(241,245,249,.6) !important}
+body.dark .tcard-mini-text strong{color:#f1f5f9 !important}
+body.dark .tcard-mini-text span{color:rgba(241,245,249,.55) !important}
+body.dark .tcard-mini-text p{color:rgba(241,245,249,.7) !important}
+body.dark .about-mini-card p{color:rgba(241,245,249,.8) !important}
+body.dark .about-mini-card strong{color:#f1f5f9 !important}
+body.dark .hcard h3{color:#f1f5f9 !important}
+body.dark .hcard p{color:rgba(241,245,249,.7) !important}
+body.dark .hcard-sm h4{color:#f1f5f9 !important}
+body.dark .hcard-sm p{color:rgba(241,245,249,.85) !important}
+body.dark .hcard-xs-text{color:rgba(241,245,249,.85) !important}
+body.dark .hero-badge{color:#f1f5f9 !important}
+body.dark .step-number{color:#f1f5f9 !important;border-color:#0f172a !important}
+body.dark .mobile-nav a{color:#f1f5f9 !important}
+body.dark .mobile-close{color:#f1f5f9 !important}
+body.dark .footer-brand p{color:rgba(241,245,249,.55)}
+body.dark .footer-col ul a{color:rgba(241,245,249,.5)}
+body.dark .footer-bottom p{color:rgba(241,245,249,.45)}
+body.dark .footer-legal a{color:rgba(241,245,249,.35)}
+
+/* ── Inline-style overrides (trust strip + What Happens Next box) ── */
+body.dark .trust-strip-strong{color:#e2e8f0 !important}
+body.dark .trust-strip-span{color:#94a3b8 !important}
+body.dark .whats-next-box{background:#1e293b !important;border-color:#334155 !important}
+body.dark .whats-next-title{color:#e2e8f0 !important}
+body.dark .whats-next-text{color:#cbd5e1 !important}
+body.dark .whats-next-bold{color:#f1f5f9 !important}
 
 /* ── Responsive ── */
 @media(max-width:1024px){
