@@ -469,6 +469,34 @@ body.dark .footer-col ul a{color:rgba(241,245,249,.5)}
 body.dark .footer-bottom p{color:rgba(241,245,249,.45)}
 body.dark .footer-legal a{color:rgba(241,245,249,.35)}
 
+/* ── Dark mode: elements using var(--white) as TEXT/BG color on dark sections ── */
+
+/* Buttons on CTA band (blue background — btn-white goes invisible) */
+body.dark .btn-white{background:#f1f5f9 !important;color:#0b1f4b !important}
+body.dark .btn-white:hover{background:#e2e8f0 !important}
+
+/* btn-ghost text uses var(--white) which goes dark */
+body.dark .btn-ghost{color:#f1f5f9 !important;border-color:rgba(241,245,249,.35) !important}
+body.dark .btn-ghost:hover{background:rgba(241,245,249,.15) !important}
+
+/* Hero nav logo (before scroll — transparent nav on hero) */
+body.dark .nav:not(.scrolled):not(.nav-static) .logo{color:#f1f5f9 !important}
+body.dark .nav:not(.scrolled):not(.nav-static) .nav-links a{color:rgba(241,245,249,.85) !important}
+body.dark .nav:not(.scrolled):not(.nav-static) .hamburger span{background:#f1f5f9 !important}
+body.dark .nav:not(.scrolled):not(.nav-static) .theme-toggle{color:#f1f5f9 !important}
+
+/* Featured plan card — dark bg with white text via var(--white) */
+body.dark .plan-card.featured .plan-name{color:#f1f5f9 !important}
+body.dark .plan-card.featured .plan-feature{color:rgba(241,245,249,.8) !important}
+body.dark .plan-card.featured .plan-desc{color:rgba(241,245,249,.6) !important}
+body.dark .plan-card.featured .plan-price sub{color:rgba(241,245,249,.5) !important}
+
+/* Footer logo */
+body.dark .footer-brand .logo-foot{color:#f1f5f9}
+
+/* CTA band text (already has dark bg — white text goes invisible) */
+body.dark .cta-band{background:linear-gradient(135deg,#1d4ed8 0%,#1e3a8a 100%)}
+
 /* ── Inline-style overrides (trust strip + What Happens Next box) ── */
 body.dark .trust-strip-strong{color:#e2e8f0 !important}
 body.dark .trust-strip-span{color:#94a3b8 !important}
