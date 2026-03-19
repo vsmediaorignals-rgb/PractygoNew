@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog — Practygo | Digital Marketing Tips for Doctors in India</title>
+  <meta name="description" content="Expert insights on digital marketing for healthcare professionals in India — SEO tips, social media strategies, GEO, reputation management, and more from the Practygo team."/>
+  <meta name="keywords" content="digital marketing for doctors India, healthcare SEO tips, doctor social media, medical practice online growth, Practygo blog"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://practygo.in/blog.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://practygo.in/blog.html"/>
+  <meta property="og:title" content="Blog — Practygo | Digital Marketing Tips for Doctors in India"/>
+  <meta property="og:description" content="Expert insights on digital marketing for healthcare professionals in India."/>
+  <meta property="og:site_name" content="Practygo"/>
+  <meta name="twitter:card" content="summary"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Practygo Blog",
+    "url": "https://practygo.in/blog.html",
+    "description": "Digital marketing insights for healthcare professionals in India.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Practygo",
+      "url": "https://practygo.in"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* ── Blog-specific styles ── */
+    .blog-hero-label { color: var(--blue-accent); background: rgba(96,165,250,.15); }
+
+    .blog-filter-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 1rem 0;
+      position: sticky; top: 56px; z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .blog-filter-inner {
+      display: flex; gap: .6rem; flex-wrap: wrap;
+      align-items: center; justify-content: center;
+    }
+    .filter-pill {
+      font-size: .8rem; font-weight: 600; color: var(--text-body);
+      background: var(--off-white); border: 1px solid var(--gray-light);
+      padding: .4rem 1rem; border-radius: 100px;
+      transition: var(--transition); cursor: pointer; white-space: nowrap;
+    }
+    .filter-pill:hover, .filter-pill.active {
+      background: var(--blue-bright); color: var(--white);
+      border-color: var(--blue-bright); transform: translateY(-2px);
+    }
+
+    /* Featured post */
+    .blog-featured { padding: 5rem 0; background: var(--white); }
+    .featured-post {
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center;
+      background: var(--off-white); border: 1px solid var(--gray-light);
+      border-radius: var(--r-xl); overflow: hidden;
+    }
+    .featured-post-img {
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; position: relative; overflow: hidden; min-height: 320px;
+    }
+    .featured-post-img::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .featured-post-img-icon { position: relative; z-index: 1; animation: float 4s ease-in-out infinite; }
+    .featured-post-content { padding: 2.5rem 2.5rem 2.5rem 0; }
+    .featured-badge {
+      display: inline-block; background: linear-gradient(90deg, #f59e0b, #f97316);
+      color: white; font-size: .7rem; font-weight: 700;
+      padding: .3em .9em; border-radius: 100px; margin-bottom: 1rem; letter-spacing: .06em;
+    }
+    .post-cat {
+      display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--blue-bright); margin-bottom: .75rem;
+    }
+    .featured-post-content h2 {
+      font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700; color: var(--blue-deep); line-height: 1.18; margin-bottom: 1rem;
+    }
+    .featured-post-content p {
+      font-size: .95rem; color: var(--text-body); line-height: 1.72; margin-bottom: 1.75rem;
+    }
+    .post-meta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+    .post-author { display: flex; align-items: center; gap: .6rem; }
+    .post-author-avatar {
+      width: 34px; height: 34px; background: var(--blue-bright); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: .85rem;
+    }
+    .post-author-name { font-size: .82rem; font-weight: 600; color: var(--text-dark); }
+    .post-date, .post-read { font-size: .78rem; color: var(--gray-mid); }
+    .post-divider { width: 4px; height: 4px; background: var(--gray-mid); border-radius: 50%; }
+
+    /* Blog grid */
+    .blog-grid-section { padding: 5rem 0; background: var(--off-white); }
+    .blog-grid-header { margin-bottom: 3rem; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+
+    .blog-card {
+      background: var(--white); border: 1px solid var(--gray-light);
+      border-radius: var(--r-xl); overflow: hidden;
+      transition: var(--transition); display: flex; flex-direction: column;
+    }
+    .blog-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: transparent; }
+    .blog-card-img {
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; position: relative; overflow: hidden;
+    }
+    .blog-card-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(11,31,75,.25) 100%);
+    }
+    .blog-card-img-icon { position: relative; z-index: 1; transition: var(--transition); }
+    .blog-card:hover .blog-card-img-icon { transform: scale(1.12); }
+    .blog-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-cat {
+      font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--blue-bright); margin-bottom: .6rem;
+    }
+    .blog-card h3 {
+      font-family: var(--font-display); font-size: 1.18rem; font-weight: 700;
+      color: var(--blue-deep); line-height: 1.3; margin-bottom: .65rem; flex: 1;
+    }
+    .blog-card p { font-size: .84rem; color: var(--text-body); line-height: 1.62; margin-bottom: 1.25rem; }
+    .blog-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+    .blog-card-date { font-size: .75rem; color: var(--gray-mid); }
+    .blog-card-read { font-size: .75rem; font-weight: 600; color: var(--blue-bright); }
+    .blog-card-tags { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .85rem; }
+    .blog-tag {
+      font-size: .68rem; font-weight: 600; color: var(--blue-bright);
+      background: var(--blue-light); padding: .2em .65em; border-radius: 100px;
+    }
+
+    /* Newsletter CTA */
+    .blog-newsletter {
+      padding: 5rem 0; background: var(--blue-deep); position: relative; overflow: hidden;
+    }
+    .blog-newsletter::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(37,99,235,.22) 0%, transparent 55%),
+                  radial-gradient(circle at 80% 20%, rgba(96,165,250,.1) 0%, transparent 40%);
+    }
+    .newsletter-inner {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .newsletter-content h2 {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 1rem;
+    }
+    .newsletter-content p { font-size: 1rem; color: rgba(255,255,255,.7); line-height: 1.7; }
+    .newsletter-perks { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .6rem; }
+    .newsletter-perk {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: .875rem; color: rgba(255,255,255,.75);
+    }
+    .newsletter-perk-icon { font-size: 1rem; }
+    .newsletter-form-wrap { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r-xl); padding: 2.5rem; }
+    .newsletter-form-wrap h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: .4rem; }
+    .newsletter-form-wrap p { font-size: .83rem; color: rgba(255,255,255,.55); margin-bottom: 1.5rem; }
+    .newsletter-input-group { display: flex; flex-direction: column; gap: .75rem; }
+    .newsletter-input {
+      width: 100%; padding: .85rem 1rem;
+      background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.15);
+      border-radius: var(--r-sm); color: var(--white); font-family: var(--font-body); font-size: .9rem;
+      outline: none; transition: border-color var(--transition);
+    }
+    .newsletter-input::placeholder { color: rgba(255,255,255,.35); }
+    .newsletter-input:focus { border-color: var(--blue-accent); }
+    .newsletter-submit { width: 100%; justify-content: center; font-size: .95rem; }
+    .newsletter-note { font-size: .72rem; color: rgba(255,255,255,.35); text-align: center; margin-top: .75rem; }
+
+    /* Popular topics sidebar */
+    .blog-main-layout { padding: 5rem 0; background: var(--white); }
+    .blog-two-col { display: grid; grid-template-columns: 1fr 320px; gap: 4rem; align-items: start; }
+    .blog-sidebar-card {
+      background: var(--off-white); border: 1px solid var(--gray-light);
+      border-radius: var(--r-xl); padding: 1.75rem; margin-bottom: 1.5rem;
+    }
+    .sidebar-title {
+      font-family: var(--font-display); font-size: 1.15rem; font-weight: 700;
+      color: var(--blue-deep); margin-bottom: 1.25rem;
+    }
+    .topic-list { display: flex; flex-direction: column; gap: .55rem; }
+    .topic-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .6rem .75rem; border-radius: var(--r-sm);
+      background: var(--white); border: 1px solid var(--gray-light);
+      transition: var(--transition); cursor: pointer;
+    }
+    .topic-item:hover { border-color: var(--blue-bright); background: var(--blue-light); }
+    .topic-item span { font-size: .84rem; font-weight: 500; color: var(--text-dark); }
+    .topic-count { font-size: .72rem; font-weight: 700; color: var(--blue-bright); background: var(--blue-light); padding: .15em .6em; border-radius: 100px; }
+    .popular-posts { display: flex; flex-direction: column; gap: 1rem; }
+    .popular-post { display: flex; gap: .85rem; align-items: flex-start; }
+    .popular-post-num { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--blue-light); line-height: 1; min-width: 2rem; }
+    .popular-post h4 { font-size: .83rem; font-weight: 600; color: var(--blue-deep); line-height: 1.4; margin-bottom: .2rem; cursor: pointer; transition: color var(--transition); }
+    .popular-post h4:hover { color: var(--blue-bright); }
+    .popular-post span { font-size: .73rem; color: var(--gray-mid); }
+
+    /* Dark mode */
+    body.dark .blog-filter-bar { background: var(--off-white); border-color: var(--gray-light); }
+    body.dark .filter-pill { background: #334155; border-color: #475569; color: #cbd5e1; }
+    body.dark .featured-post { background: #1e293b; border-color: #334155; }
+    body.dark .featured-post-content h2 { color: #e2e8f0; }
+    body.dark .featured-post-content p { color: #cbd5e1; }
+    body.dark .post-author-name { color: #e2e8f0; }
+    body.dark .blog-card { background: #1e293b; border-color: #334155; }
+    body.dark .blog-card h3 { color: #e2e8f0; }
+    body.dark .blog-card p { color: #cbd5e1; }
+    body.dark .blog-tag { background: #1e3558; color: #93c5fd; }
+    body.dark .blog-main-layout { background: #0f172a; }
+    body.dark .blog-sidebar-card { background: #1e293b; border-color: #334155; }
+    body.dark .sidebar-title { color: #e2e8f0; }
+    body.dark .topic-item { background: #0f172a; border-color: #334155; }
+    body.dark .topic-item:hover { background: #1e3558; border-color: #3b82f6; }
+    body.dark .topic-item span { color: #cbd5e1; }
+    body.dark .topic-count { background: #1e3558; color: #93c5fd; }
+    body.dark .popular-post h4 { color: #e2e8f0; }
+    body.dark .popular-post-num { color: #334155; }
+
+    @media (max-width: 1024px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-two-col { grid-template-columns: 1fr; }
+      .newsletter-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-post-img { min-height: 200px; }
+      .featured-post-content { padding: 1.75rem; }
+    }
+  </style>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>"/>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<a href="https://wa.me/918109169546" class="wa-fab" target="_blank" rel="noopener" title="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav class="nav nav-static" id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">Practy<span>go</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Get a Free Audit →</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:.5rem">
+      <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <button class="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary" style="font-size:1rem;margin-top:1rem">Get a Free Audit</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label blog-hero-label">Practygo Blog</span>
+    <h1>Insights for India's<br><em style="font-style:italic;color:var(--blue-accent)">Healthcare Professionals</em></h1>
+    <p>Practical digital marketing strategies, SEO tips, and growth advice — written specifically for doctors, clinics, and healthcare brands in India.</p>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="blog-filter-bar">
+  <div class="container">
+    <div class="blog-filter-inner">
+      <button class="filter-pill active" data-cat="all">All Posts</button>
+      <button class="filter-pill" data-cat="seo">SEO</button>
+      <button class="filter-pill" data-cat="social">Social Media</button>
+      <button class="filter-pill" data-cat="geo">GEO / AI Search</button>
+      <button class="filter-pill" data-cat="reputation">Reputation</button>
+      <button class="filter-pill" data-cat="websites">Websites</button>
+      <button class="filter-pill" data-cat="compliance">Compliance</button>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED POST -->
+<section class="blog-featured">
+  <div class="container">
+    <div class="featured-post reveal">
+      <div class="featured-post-img">
+        <span class="featured-post-img-icon">🤖</span>
+      </div>
+      <div class="featured-post-content">
+        <span class="featured-badge">✦ Featured Article</span>
+        <div class="post-cat">GEO / AI Search</div>
+        <h2>Why Every Doctor in India Needs GEO Optimisation in 2025</h2>
+        <p>ChatGPT, Google's AI Overview, and Perplexity are now answering millions of "find a doctor near me" queries daily. If your clinic isn't being cited by these AI tools, you're invisible to a rapidly growing segment of patients. Here's what you need to do now.</p>
+        <div class="post-meta">
+          <div class="post-author">
+            <div class="post-author-avatar">✍️</div>
+            <span class="post-author-name">Practygo Team</span>
+          </div>
+          <div class="post-divider"></div>
+          <span class="post-date">March 12, 2025</span>
+          <div class="post-divider"></div>
+          <span class="post-read">8 min read</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN BLOG + SIDEBAR -->
+<section class="blog-main-layout">
+  <div class="container">
+    <div class="blog-two-col">
+
+      <!-- POSTS LIST -->
+      <div>
+        <div class="blog-grid-header reveal">
+          <span class="section-label">Latest Articles</span>
+          <h2 class="section-title">Fresh From the Practygo Desk</h2>
+        </div>
+        <div class="blog-grid" id="blogGrid">
+
+          <article class="blog-card reveal" data-cat="seo">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#0b1f4b,#1a3a8f)">
+              <span class="blog-card-img-icon">🔍</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-cat">SEO</div>
+              <h3>How to Rank #1 on Google Maps as a Doctor in India</h3>
+              <p>Your Google Business Profile is your most powerful local SEO asset. Here's the complete optimisation checklist we use for every new client.</p>
+              <div class="blog-card-tags">
+                <span class="blog-tag">Google Maps</span>
+                <span class="blog-tag">Local SEO</span>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">Feb 28, 2025</span>
+                <span class="blog-card-read">6 min read →</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal" data-cat="social">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#7c3aed,#4f46e5)">
+              <span class="blog-card-img-icon">📱</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-cat">Social Media</div>
+              <h3>Instagram for Doctors: What You Can and Cannot Post (NMC Guidelines)</h3>
+              <p>Medical social media in India comes with specific legal constraints. We break down exactly what's permitted, what's prohibited, and how to build an engaging profile within the rules.</p>
+              <div class="blog-card-tags">
+                <span class="blog-tag">Instagram</span>
+                <span class="blog-tag">NMC Compliance</span>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">Feb 14, 2025</span>
+                <span class="blog-card-read">9 min read →</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal" data-cat="reputation">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#059669,#0d9488)">
+              <span class="blog-card-img-icon">⭐</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-cat">Reputation Management</div>
+              <h3>A Doctor Got a 1-Star Review. Here's Exactly How We Handled It.</h3>
+              <p>Negative reviews are inevitable in healthcare. The way you respond determines whether they damage your reputation — or actually build trust with prospective patients.</p>
+              <div class="blog-card-tags">
+                <span class="blog-tag">Google Reviews</span>
+                <span class="blog-tag">ORM</span>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">Jan 30, 2025</span>
+                <span class="blog-card-read">7 min read →</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal" data-cat="websites">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#0e7490,#0284c7)">
+              <span class="blog-card-img-icon">💻</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-cat">Websites</div>
+              <h3>5 Things Every Doctor's Website Must Have in 2025</h3>
+              <p>Most clinic websites fail to convert visitors into bookings. We've audited hundreds of healthcare websites in India — here are the five elements that make the biggest difference.</p>
+              <div class="blog-card-tags">
+                <span class="blog-tag">Website Design</span>
+                <span class="blog-tag">Conversions</span>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">Jan 18, 2025</span>
+                <span class="blog-card-read">5 min read →</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal" data-cat="geo">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#6d28d9,#7c3aed)">
+              <span class="blog-card-img-icon">🧠</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-cat">GEO / AI Search</div>
+              <h3>What Is E-E-A-T and Why Does Google Rank Your Clinic on It?</h3>
+              <p>Experience, Expertise, Authoritativeness, Trustworthiness — Google's quality guidelines for medical content are strict. Here's how to build all four signals for your practice.</p>
+              <div class="blog-card-tags">
+                <span class="blog-tag">E-E-A-T</span>
+                <span class="blog-tag">Content SEO</span>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">Jan 5, 2025</span>
+                <span class="blog-card-read">10 min read →</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal" data-cat="seo">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#b45309,#d97706)">
+              <span class="blog-card-img-icon">📍</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-cat">SEO</div>
+              <h3>Practo vs Google: Which Platform Should Doctors Focus On?</h3>
+              <p>India's two biggest patient discovery platforms compared — we look at organic reach, cost, patient quality, and long-term value so you can decide where to invest first.</p>
+              <div class="blog-card-tags">
+                <span class="blog-tag">Practo</span>
+                <span class="blog-tag">Platform Strategy</span>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">Dec 20, 2024</span>
+                <span class="blog-card-read">8 min read →</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal" data-cat="social">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#be185d,#db2777)">
+              <span class="blog-card-img-icon">🎬</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-cat">Social Media</div>
+              <h3>Reels for Doctors: 10 Content Ideas That Get Views Without Embarrassing You</h3>
+              <p>Short-form video is the highest-reach format on Instagram. These 10 Reel formats are proven to perform well for healthcare professionals while maintaining clinical dignity.</p>
+              <div class="blog-card-tags">
+                <span class="blog-tag">Reels</span>
+                <span class="blog-tag">Content Ideas</span>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">Dec 8, 2024</span>
+                <span class="blog-card-read">6 min read →</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal" data-cat="compliance">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#1e3a8a,#1d4ed8)">
+              <span class="blog-card-img-icon">⚖️</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-cat">Compliance</div>
+              <h3>The Complete Guide to NMC Advertising Guidelines for Doctors</h3>
+              <p>Understanding what you can and cannot say in your marketing is non-negotiable. This comprehensive guide covers every key provision of the NMC code that affects your digital presence.</p>
+              <div class="blog-card-tags">
+                <span class="blog-tag">NMC Guidelines</span>
+                <span class="blog-tag">Legal</span>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">Nov 25, 2024</span>
+                <span class="blog-card-read">12 min read →</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal" data-cat="seo">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#064e3b,#065f46)">
+              <span class="blog-card-img-icon">📊</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-cat">SEO</div>
+              <h3>Hindi SEO: Why Bilingual Content Doubles Your Reach in Tier-2 Cities</h3>
+              <p>Most clinic websites are English-only — leaving millions of Hindi-speaking patients unable to find you. Here's how to build a bilingual SEO strategy that captures both audiences.</p>
+              <div class="blog-card-tags">
+                <span class="blog-tag">Hindi SEO</span>
+                <span class="blog-tag">Tier-2 Cities</span>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">Nov 12, 2024</span>
+                <span class="blog-card-read">7 min read →</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Load More -->
+        <div style="text-align:center;margin-top:3rem" class="reveal">
+          <button class="btn btn-outline" id="loadMoreBtn">Load More Articles</button>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <div class="blog-sidebar-card reveal">
+          <h3 class="sidebar-title">Browse by Topic</h3>
+          <div class="topic-list">
+            <div class="topic-item"><span>🔍 Search Engine Optimisation</span><span class="topic-count">14</span></div>
+            <div class="topic-item"><span>📱 Social Media</span><span class="topic-count">11</span></div>
+            <div class="topic-item"><span>🤖 GEO / AI Search</span><span class="topic-count">6</span></div>
+            <div class="topic-item"><span>⭐ Reputation Management</span><span class="topic-count">8</span></div>
+            <div class="topic-item"><span>💻 Clinic Websites</span><span class="topic-count">7</span></div>
+            <div class="topic-item"><span>⚖️ NMC Compliance</span><span class="topic-count">5</span></div>
+            <div class="topic-item"><span>🎯 Digital Advertising</span><span class="topic-count">9</span></div>
+          </div>
+        </div>
+
+        <div class="blog-sidebar-card reveal">
+          <h3 class="sidebar-title">Most Read Articles</h3>
+          <div class="popular-posts">
+            <div class="popular-post">
+              <span class="popular-post-num">01</span>
+              <div><h4>Why Every Doctor in India Needs GEO Optimisation in 2025</h4><span>8 min · GEO / AI Search</span></div>
+            </div>
+            <div class="popular-post">
+              <span class="popular-post-num">02</span>
+              <div><h4>How to Rank #1 on Google Maps as a Doctor in India</h4><span>6 min · SEO</span></div>
+            </div>
+            <div class="popular-post">
+              <span class="popular-post-num">03</span>
+              <div><h4>Instagram for Doctors: What You Can and Cannot Post</h4><span>9 min · Social Media</span></div>
+            </div>
+            <div class="popular-post">
+              <span class="popular-post-num">04</span>
+              <div><h4>The Complete Guide to NMC Advertising Guidelines</h4><span>12 min · Compliance</span></div>
+            </div>
+            <div class="popular-post">
+              <span class="popular-post-num">05</span>
+              <div><h4>5 Things Every Doctor's Website Must Have in 2025</h4><span>5 min · Websites</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-sidebar-card reveal" style="background:linear-gradient(135deg,var(--blue-deep),var(--blue-mid));border:none">
+          <div style="text-align:center">
+            <div style="font-size:2.5rem;margin-bottom:.75rem">🚀</div>
+            <h3 class="sidebar-title" style="color:white">Ready to grow your practice?</h3>
+            <p style="font-size:.84rem;color:rgba(255,255,255,.65);margin-bottom:1.5rem;line-height:1.6">Get a free digital audit and see exactly where your online growth opportunities are.</p>
+            <a href="contact.html" class="btn btn-white" style="width:100%;justify-content:center;font-size:.88rem">Get Free Audit →</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="blog-newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-content reveal">
+        <h2>Get Healthcare Marketing Insights in Your Inbox</h2>
+        <p>Join 500+ doctors and clinic managers who read our fortnightly newsletter — practical tips, no fluff.</p>
+        <div class="newsletter-perks">
+          <div class="newsletter-perk"><span class="newsletter-perk-icon">📬</span> Fortnightly — never more</div>
+          <div class="newsletter-perk"><span class="newsletter-perk-icon">🇮🇳</span> India-specific strategies only</div>
+          <div class="newsletter-perk"><span class="newsletter-perk-icon">🚫</span> No spam, unsubscribe anytime</div>
+        </div>
+      </div>
+      <div class="newsletter-form-wrap reveal">
+        <h3>Stay Ahead of the Curve</h3>
+        <p>Get the latest healthcare marketing insights every two weeks.</p>
+        <div class="newsletter-input-group">
+          <input type="text" class="newsletter-input" placeholder="Dr. Your Name"/>
+          <input type="email" class="newsletter-input" placeholder="your@email.com"/>
+          <button class="btn btn-primary newsletter-submit magnetic-btn">Subscribe Free →</button>
+        </div>
+        <p class="newsletter-note">🔒 No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container">
+    <div class="reveal">
+      <h2>Want Results, Not Just Advice?</h2>
+      <p>Practygo does the work — so you can focus on your patients. Get a free audit and see your growth potential.</p>
+      <div class="cta-band-actions">
+        <a href="contact.html" class="btn btn-white magnetic-btn">Get Your Free Audit →</a>
+        <a href="services.html" class="btn btn-ghost">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-foot">Practy<span>go</span></div>
+        <p>India's dedicated digital marketing agency for doctors, clinics, and healthcare professionals. Growing practices, one search at a time.</p>
+        <div class="footer-brand-social">
+          <a href="#" class="footer-social-btn">📸</a>
+          <a href="#" class="footer-social-btn">💼</a>
+          <a href="#" class="footer-social-btn">👍</a>
+          <a href="#" class="footer-social-btn">💬</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Popular Posts</h4><ul><li><a href="#">GEO for Doctors 2025</a></li><li><a href="#">Google Maps Ranking</a></li><li><a href="#">NMC Ad Guidelines</a></li><li><a href="#">Instagram for Doctors</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:vsmediaorignals@gmail.com">vsmediaorignals@gmail.com</a></li><li><a href="tel:+918109169546">+91 8109169546</a></li><li><a href="#">Mumbai · Delhi · Pune</a></li><li><a href="contact.html">Book a Call</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Practygo. All rights reserved. Built with ❤️ for India's healthcare heroes.</p>
+      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Filter pills
+  document.querySelectorAll('.filter-pill').forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      document.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      var cat = pill.dataset.cat;
+      document.querySelectorAll('.blog-card').forEach(function(card) {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Load more (visual only — scrolls into view)
+  document.getElementById('loadMoreBtn') && document.getElementById('loadMoreBtn').addEventListener('click', function() {
+    this.textContent = 'All articles loaded ✓';
+    this.disabled = true;
+    this.style.opacity = '.5';
+  });
+</script>
+</body>
+</html>

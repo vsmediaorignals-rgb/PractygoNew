@@ -222,7 +222,7 @@ ul { list-style: none; }
   padding: 9rem 0 5rem; position: relative; overflow: hidden;
 }
 .page-hero::before {
-  content: ''; position: absolute; inset: 0;
+  content: ''; position: absolute; inset: 0; border-radius: var(--r-xl); overflow: hidden;
   background: radial-gradient(circle at 20% 50%, rgba(37,99,235,.18) 0%, transparent 50%),
               radial-gradient(circle at 80% 20%, rgba(96,165,250,.1) 0%, transparent 40%),
               url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -497,7 +497,7 @@ ul { list-style: none; }
 /* ── Why Us ── */
 .why-section { padding: 7rem 0; background: var(--blue-deep); position: relative; overflow: hidden; }
 .why-section::before {
-  content: ''; position: absolute; inset: 0;
+  content: ''; position: absolute; inset: 0; border-radius: var(--r-xl); overflow: hidden;
   background: radial-gradient(circle at 10% 50%, rgba(37,99,235,.2) 0%, transparent 50%),
               radial-gradient(circle at 90% 10%, rgba(96,165,250,.12) 0%, transparent 40%);
 }
@@ -609,10 +609,10 @@ ul { list-style: none; }
   background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
   border-radius: var(--r-xl); aspect-ratio: 4/3;
   display: flex; align-items: center; justify-content: center;
-  font-size: 5.5rem; position: relative; overflow: hidden;
+  font-size: 5.5rem; position: relative; overflow: visible;
 }
 .svc-visual::before {
-  content: ''; position: absolute; inset: 0;
+  content: ''; position: absolute; inset: 0; border-radius: var(--r-xl); overflow: hidden;
   background: radial-gradient(circle at 30% 30%, rgba(96,165,250,.2), transparent 60%),
               url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
