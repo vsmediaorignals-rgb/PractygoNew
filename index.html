@@ -3,55 +3,36 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <!-- PRIMARY SEO -->
   <title>Practygo — Digital Growth for Healthcare Professionals</title>
   <meta name="description" content="Practygo helps doctors and healthcare professionals in India grow their online presence through SEO, social media, GEO, and website creation."/>
   <meta name="keywords" content="digital marketing for doctors India, healthcare SEO, medical practice online, doctor social media management, Practygo"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://practygo.in/"/>
-
-  <!-- OPEN GRAPH (WhatsApp, LinkedIn, Facebook previews) -->
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://practygo.in/"/>
   <meta property="og:title" content="Practygo — Digital Growth for Healthcare Professionals"/>
   <meta property="og:description" content="India's dedicated digital agency for doctors & clinics. We help you rank on Google, grow on social media, and get more patients."/>
   <meta property="og:site_name" content="Practygo"/>
-
-  <!-- TWITTER CARD -->
   <meta name="twitter:card" content="summary"/>
   <meta name="twitter:title" content="Practygo — Digital Growth for Healthcare Professionals"/>
   <meta name="twitter:description" content="India's dedicated digital agency for doctors & clinics. SEO, social media, websites & more."/>
-
-  <!-- SCHEMA MARKUP (helps Google understand your business) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Practygo",
-    "url": "https://practygo.in",
-    "logo": "https://practygo.in/favicon.ico",
-    "description": "India's dedicated digital marketing agency for doctors, clinics, and healthcare professionals.",
-    "areaServed": "India",
-    "serviceType": "Digital Marketing for Healthcare",
-    "telephone": "+918109169546",
-    "email": "vsmediaorignals@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Mumbai",
-      "addressRegion": "Maharashtra",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://practygo.in"
-    ]
-  }
-  </script>
-
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Practygo","url":"https://practygo.in","description":"India's dedicated digital marketing agency for doctors, clinics, and healthcare professionals.","areaServed":"India","serviceType":"Digital Marketing for Healthcare","telephone":"+918109169546","email":"vsmediaorignals@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"/>
   <link rel="stylesheet" href="styles.css"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>"/>
 </head>
 <body>
+
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/918109169546" class="wa-fab" target="_blank" rel="noopener" title="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <nav class="nav" id="nav">
   <div class="container nav-inner">
@@ -78,52 +59,105 @@
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
   <div class="hero-grid"></div>
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
   <div class="container">
     <div class="hero-inner">
       <div class="hero-content">
-        <span class="hero-label">🩺 Built for India's Healthcare Professionals</span>
-        <h1>Grow Your<br><em>Medical Practice</em><br>Online</h1>
-        <p class="hero-desc">Practygo is India's dedicated digital agency for doctors, clinics, and healthcare brands. We turn your expertise into online authority — patients find you, trust you, and choose you.</p>
+        <span class="hero-label">🩺 India's Healthcare Growth Agency</span>
+        <h1>Grow Your<br><em class="word-cycle" id="wordCycle">Medical</em><br>Practice Online</h1>
+        <p class="hero-desc">Practygo is India's only dedicated digital agency for doctors and healthcare brands. We turn your expertise into online authority — patients find you, trust you, and choose you.</p>
         <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">Get a Free Audit →</a>
+          <a href="contact.html" class="btn btn-primary magnetic-btn">Get a Free Audit →</a>
           <a href="services.html" class="btn btn-ghost">Explore Services</a>
         </div>
         <div class="hero-stats">
           <div class="stat-item">
-            <div class="stat-num"><span data-target="20">20</span>+</div>
+            <div class="stat-num"><span data-target="20">0</span>+</div>
             <div class="stat-label">Doctors Served</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num"><span data-target="15">15</span>+</div>
+            <div class="stat-num"><span data-target="15">0</span>+</div>
             <div class="stat-label">Cities in India</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num"><span data-target="94">94</span>%</div>
+            <div class="stat-num"><span data-target="94">0</span>%</div>
             <div class="stat-label">Client Retention</div>
           </div>
         </div>
       </div>
+
       <div class="hero-visual">
-        <div class="hero-badge">✅ 20+ Happy Healthcare Clients</div>
-        <div class="hero-card-stack">
-          <div class="hcard hcard-main">
-            <div class="hcard-icon">📈</div>
-            <h3>Patient Growth Dashboard</h3>
-            <p>Track new patient enquiries, appointment bookings, and online reach — all in one place.</p>
+        <div class="hero-badge">✅ 20+ Healthcare Clients</div>
+        <div class="dash-wrap">
+          <div class="dash-chrome">
+            <div class="dash-dots"><span></span><span></span><span></span></div>
+            <div class="dash-addr">practygo.in/dashboard</div>
           </div>
-          <div class="hcard hcard-sm">
-            <h4><span class="pulse-dot"></span> Live Optimisation</h4>
-            <p>Your SEO &amp; social always in good hands</p>
+          <div class="dash-body">
+            <div class="dash-header-row">
+              <div>
+                <div class="dash-clinic">Dr. Sharma · Cardiology</div>
+                <div class="dash-period">Patient Growth · Sep 2025</div>
+              </div>
+              <div class="live-pill"><span class="pulse-dot"></span> Live</div>
+            </div>
+            <div class="bar-chart-wrap">
+              <div class="bar-chart">
+                <div class="bar" style="--h:42%"><span>Apr</span></div>
+                <div class="bar" style="--h:55%"><span>May</span></div>
+                <div class="bar" style="--h:50%"><span>Jun</span></div>
+                <div class="bar" style="--h:72%"><span>Jul</span></div>
+                <div class="bar" style="--h:68%"><span>Aug</span></div>
+                <div class="bar bar-hi" style="--h:91%"><span>Sep</span></div>
+              </div>
+            </div>
+            <div class="chart-tag">📈 +127% new patient enquiries this period</div>
+            <div class="dash-kpi-row">
+              <div class="kpi"><div class="kpi-val">#1</div><div class="kpi-lbl">Google Maps</div></div>
+              <div class="kpi"><div class="kpi-val">4.9★</div><div class="kpi-lbl">Avg Rating</div></div>
+              <div class="kpi"><div class="kpi-val">340</div><div class="kpi-lbl">Searches/mo</div></div>
+            </div>
           </div>
+        </div>
+        <div class="fl-card fl-a">
+          <div class="fl-icon">🔔</div>
+          <div><strong>New Booking!</strong><span>Via Google Search</span></div>
+        </div>
+        <div class="fl-card fl-b">
+          <div class="fl-icon">⭐</div>
+          <div><strong>5-Star Review</strong><span>"Excellent service..."</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRUSTED BY -->
+<!-- MARQUEE STRIP -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>🩺 20+ Doctors Served</span><span class="mdot">◆</span>
+    <span>📈 +127% Patient Growth</span><span class="mdot">◆</span>
+    <span>🏆 #1 Google Maps Rankings</span><span class="mdot">◆</span>
+    <span>⭐ 4.9 Average Rating</span><span class="mdot">◆</span>
+    <span>📍 15+ Cities Across India</span><span class="mdot">◆</span>
+    <span>🔒 NMC/MCI Compliant Content</span><span class="mdot">◆</span>
+    <span>💬 Bilingual EN + हिंदी</span><span class="mdot">◆</span>
+    <span>📅 Month-to-Month Plans</span><span class="mdot">◆</span>
+    <!-- duplicate for seamless loop -->
+    <span>🩺 20+ Doctors Served</span><span class="mdot">◆</span>
+    <span>📈 +127% Patient Growth</span><span class="mdot">◆</span>
+    <span>🏆 #1 Google Maps Rankings</span><span class="mdot">◆</span>
+    <span>⭐ 4.9 Average Rating</span><span class="mdot">◆</span>
+    <span>📍 15+ Cities Across India</span><span class="mdot">◆</span>
+    <span>🔒 NMC/MCI Compliant Content</span><span class="mdot">◆</span>
+    <span>💬 Bilingual EN + हिंदी</span><span class="mdot">◆</span>
+    <span>📅 Month-to-Month Plans</span><span class="mdot">◆</span>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <section class="about-strip">
@@ -132,9 +166,9 @@
       <div class="about-visual reveal">
         <div class="about-img-wrap">
           <div class="about-img-placeholder">
-            <div class="about-mini-card"><div class="icon">🔍</div><strong data-target="340">140</strong><p>Searches Optimised</p></div>
-            <div class="about-mini-card"><div class="icon">📱</div><strong data-target="120">27</strong><p>Social Profiles Managed</p></div>
-            <div class="about-mini-card"><div class="icon">🌐</div><strong data-target="85">5</strong><p>Websites Launched</p></div>
+            <div class="about-mini-card"><div class="icon">🔍</div><strong data-target="340">0</strong><p>Searches Optimised</p></div>
+            <div class="about-mini-card"><div class="icon">📱</div><strong data-target="120">0</strong><p>Social Profiles Managed</p></div>
+            <div class="about-mini-card"><div class="icon">🌐</div><strong data-target="85">0</strong><p>Websites Launched</p></div>
             <div class="about-mini-card"><div class="icon">⭐</div><strong>4.9</strong><p>Average Rating</p></div>
           </div>
         </div>
@@ -164,59 +198,59 @@
             <div class="about-feature-text"><strong>Measurable Results</strong><span>Monthly reports showing exactly how your practice is growing online.</span></div>
           </div>
         </div>
-        <div style="margin-top:2rem"><a href="services.html" class="btn btn-primary">See All Services →</a></div>
+        <div style="margin-top:2.5rem"><a href="services.html" class="btn btn-primary magnetic-btn">See All Services →</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES PREVIEW -->
+<!-- SERVICES -->
 <section class="services-section">
   <div class="container">
     <div class="services-header reveal">
       <span class="section-label">What We Do</span>
-      <h2 class="section-title">Digital Services Crafted for Healthcare</h2>
-      <p class="section-sub">From search rankings to stunning websites, everything your practice needs to dominate the digital landscape.</p>
+      <h2 class="section-title">Everything Your Practice Needs to Grow Online</h2>
+      <p class="section-sub">Six specialist services, each purpose-built for Indian healthcare professionals.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal">
+      <div class="service-card reveal" data-tilt>
         <div class="service-icon">📱</div>
         <h3>Social Media Management</h3>
-        <p>Build a trusted, engaging social presence. We create compliant, patient-friendly content for Instagram, Facebook, LinkedIn and more.</p>
-        <div><span class="service-tag">Instagram</span><span class="service-tag">Facebook</span><span class="service-tag">LinkedIn</span></div>
+        <p>Consistent, compliant content that builds patient trust on Instagram, Facebook, and LinkedIn — managed entirely by us.</p>
+        <div><span class="service-tag">Instagram</span><span class="service-tag">Facebook</span></div>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal" data-tilt>
         <div class="service-icon">🔍</div>
         <h3>Search Engine Optimisation</h3>
-        <p>Rank on Google when patients search for specialists in your city. Hyper-local SEO strategies built specifically for medical practices.</p>
-        <div><span class="service-tag">Local SEO</span><span class="service-tag">GMB Optimisation</span></div>
+        <p>Hyper-local SEO so patients searching "best doctor near me" find you first — on Google Maps, Search, and health directories.</p>
+        <div><span class="service-tag">Google Maps</span><span class="service-tag">Local SEO</span></div>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal" data-tilt>
         <div class="service-icon">🤖</div>
-        <h3>GEO — Generative Engine Optimisation</h3>
-        <p>Ensure your practice appears in AI-generated answers on ChatGPT, Google SGE, and Perplexity. The future of search, today.</p>
-        <div><span class="service-tag">AI Search</span><span class="service-tag">ChatGPT</span><span class="service-tag">Google SGE</span></div>
+        <h3>GEO — AI Search Optimisation</h3>
+        <p>Get recommended by ChatGPT, Google AI Overviews, and Perplexity when patients ask AI for doctor recommendations.</p>
+        <div><span class="service-tag">ChatGPT</span><span class="service-tag">Gemini</span></div>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal" data-tilt>
         <div class="service-icon">💻</div>
-        <h3>Website Creation</h3>
-        <p>Professional, fast, mobile-first websites for clinics and hospitals. Appointment booking, doctor profiles, patient testimonials — all included.</p>
+        <h3>Clinic Website Creation</h3>
+        <p>Beautiful, fast, mobile-first websites that convert visitors into booked appointments from day one.</p>
         <div><span class="service-tag">Clinic Websites</span><span class="service-tag">Mobile First</span></div>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal" data-tilt>
         <div class="service-icon">⭐</div>
         <h3>Online Reputation Management</h3>
-        <p>Monitor, manage, and grow your online reviews. Turn every patient experience into a trust signal that brings in new appointments.</p>
+        <p>Monitor, manage, and grow your online reviews. Turn every patient experience into a trust signal that drives new appointments.</p>
         <div><span class="service-tag">Google Reviews</span><span class="service-tag">Practo</span></div>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal" data-tilt>
         <div class="service-icon">🎯</div>
         <h3>Digital Advertising</h3>
-        <p>Ethical, targeted ad campaigns for doctors that comply with regulations while generating quality patient leads from your local area.</p>
+        <p>Ethical, targeted ad campaigns for doctors that comply with regulations while generating quality patient leads locally.</p>
         <div><span class="service-tag">Google Ads</span><span class="service-tag">Meta Ads</span></div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:3rem" class="reveal">
+    <div style="text-align:center;margin-top:3.5rem" class="reveal">
       <a href="services.html" class="btn btn-outline">View All Services &amp; Pricing →</a>
     </div>
   </div>
@@ -229,11 +263,11 @@
       <div class="why-content reveal">
         <span class="section-label">Why Practygo</span>
         <h2 class="section-title">We Speak Both Medicine and Marketing</h2>
-        <p class="section-sub">Most agencies don't understand the healthcare sector. We do — deeply. Here's what sets us apart.</p>
+        <p class="section-sub">Most agencies don't understand healthcare. We do — deeply. Here's what sets us apart.</p>
         <div class="why-reasons">
           <div class="why-reason">
             <div class="why-reason-num">01</div>
-            <div class="why-reason-text"><strong>Healthcare Compliance by Default</strong><span>All content and campaigns follow NMC/MCI advertising guidelines. No compliance headaches.</span></div>
+            <div class="why-reason-text"><strong>Healthcare Compliance by Default</strong><span>All content and campaigns follow NMC/MCI advertising guidelines. No compliance headaches — ever.</span></div>
           </div>
           <div class="why-reason">
             <div class="why-reason-num">02</div>
@@ -284,7 +318,8 @@
       <h2 class="section-title">From Consultation to Growth</h2>
       <p class="section-sub">A simple, transparent process designed to fit around your busy schedule as a healthcare professional.</p>
     </div>
-    <div class="process-steps">
+    <div class="process-steps" id="processSteps">
+      <div class="process-connector" id="processConnector"></div>
       <div class="process-step reveal">
         <div class="step-number">1</div>
         <h3>Free Audit</h3>
@@ -312,11 +347,13 @@
 <!-- CTA -->
 <section class="cta-band">
   <div class="container">
-    <h2>Ready to Grow Your Practice Online?</h2>
-    <p>Join 200+ healthcare professionals who trust Practygo for their digital growth. Your free audit takes just 15 minutes.</p>
-    <div class="cta-band-actions">
-      <a href="contact.html" class="btn btn-white">Get Your Free Audit →</a>
-      <a href="services.html" class="btn btn-ghost">Explore Pricing</a>
+    <div class="reveal">
+      <h2>Ready to Grow Your Practice Online?</h2>
+      <p>Join 20+ healthcare professionals who trust Practygo for their digital growth. Your free audit takes just 15 minutes.</p>
+      <div class="cta-band-actions">
+        <a href="contact.html" class="btn btn-white magnetic-btn">Get Your Free Audit →</a>
+        <a href="services.html" class="btn btn-ghost">Explore Pricing</a>
+      </div>
     </div>
   </div>
 </section>
@@ -358,7 +395,7 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:hello@practygo.in">vsmediaorignals@gmail.com</a></li>
+          <li><a href="mailto:vsmediaorignals@gmail.com">vsmediaorignals@gmail.com</a></li>
           <li><a href="tel:+918109169546">+91 8109169546</a></li>
           <li><a href="#">Mumbai · Delhi · Pune</a></li>
           <li><a href="contact.html">Book a Call</a></li>
@@ -370,7 +407,6 @@
       <div class="footer-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
-        <a href="#">Disclaimer</a>
       </div>
     </div>
   </div>
