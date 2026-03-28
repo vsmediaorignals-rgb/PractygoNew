@@ -42,7 +42,7 @@ body {
   overflow-x: hidden;
   cursor: none;
 }
-@media (pointer: coarse) { body { cursor: none; } }
+@media (pointer: coarse) { body { cursor: auto; } }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
