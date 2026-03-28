@@ -16,7 +16,7 @@
   ───────────────────────────────────────────── */
   var dot  = document.getElementById('cursorDot');
   var ring = document.getElementById('cursorRing');
-  if (dot && ring) {
+  if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
     var mx = -100, my = -100;
     var rx = -100, ry = -100;
     document.addEventListener('mousemove', function (e) {
