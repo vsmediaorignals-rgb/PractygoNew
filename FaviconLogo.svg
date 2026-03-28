@@ -1,0 +1,41 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+  <defs>
+    <filter id="pinkGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="tealGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="100.0" cy="100.0" r="72.80" fill="#0B1220"/>
+
+  <!-- Ring 1 — bottom-left · thick stroke lw=5.60 -->
+  <circle cx="77.60" cy="114.00" r="30.80"
+    fill="none" stroke="#FFFFFF" stroke-width="5.60" stroke-opacity="0.95"/>
+
+  <!-- Ring 2 — centre · mid stroke lw=4.20 -->
+  <circle cx="100.00" cy="100.00" r="30.80"
+    fill="none" stroke="#FFFFFF" stroke-width="4.20" stroke-opacity="0.92"/>
+
+  <!-- Ring 3 — top-right · fine stroke lw=2.80 -->
+  <circle cx="122.40" cy="86.00" r="30.80"
+    fill="none" stroke="#FFFFFF" stroke-width="2.80" stroke-opacity="0.88"/>
+
+  <!-- Teal arc on Ring 3 top — startAng=30 extent=120 -->
+  <path d="M 149.07 70.60 A 30.80 30.80 0 0 0 95.73 70.60"
+    fill="none" stroke="#0ABFBC" stroke-width="3.08"
+    stroke-linecap="round" filter="url(#tealGlow)"/>
+
+  <!-- Pink dot — Ring 1 & 2 intersection -->
+  <circle cx="98.04" cy="103.92" r="2.52"
+    fill="#EC4899" filter="url(#pinkGlow)"/>
+
+  <!-- Pink dot — Ring 2 & 3 intersection -->
+  <circle cx="120.44" cy="89.92" r="2.52"
+    fill="#EC4899" filter="url(#pinkGlow)"/>
+
+</svg>
